@@ -95,7 +95,7 @@ variable "subnet_private_database_tag" {
 
 variable "sg_name" {
   type    = list(string)
-  default = ["sg-postgre", "sg-backend", "sg-web"]
+  default = ["all-allow"]
 }
 
 
