@@ -18,9 +18,11 @@ resource "aws_instance" "bastion" {
   subnet_id       = element(var.public_subnet_ids, 0)  # Selects the first public subnet
   security_groups = [element(var.sg_id, 0)]           # Selects the first security group
   key_name        = "sidhu@123"                     # Update with a valid key pair name
- user_data = base64encode(file("C:/Users/KanaparthiSiddhartha/Documents/DevOps/terraform-sample-project-01/vpc-terraform/bastion-server/bastion.sh"))
+// user_data = base64encode(file("C:/Users/KanaparthiSiddhartha/Documents/DevOps/terraform-sample-project-01/vpc-terraform/bastion-server/bastion.sh"))
  # user_data                   = base64encode(file("AIML.sh"))
-  tags = {
+  user_data = base64encode(file("${path.module}/bastion.sh"))  
+
+tags = {
     Name = "bastion-server"                        # Helpful for instance identification
   }
 }
