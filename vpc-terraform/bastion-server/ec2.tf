@@ -4,7 +4,7 @@
 #   instance_type   = var.instance_type
 #   subnet_id       = element(var.public_subnet_ids, 0)  # Selects the first subnet
 #   security_groups = [element(var.sg_id, 0)]  # Selects the first security group
-#    key_name = "sidhu@123"
+#    key_name = "saru@123"
 #   tags = {
 #     Name = "bastion-server"
 #   }
